@@ -18,10 +18,10 @@ class window.AppView extends Backbone.View
       @$el.find('.stand-button').prop('disabled', true)
       @model.get('playerHand').stand()
       @model.get('dealerHand').first().flip()
-      @model.get('dealerHand').scores()
-      console.log @model.get('dealerHand').scores()
-      console.log @model.get('dealerHand').scores()[0]
-      @model.get('dealerHand').hit()
+      # @model.get('dealerHand').scores()
+      # console.log @model.get('dealerHand').scores()
+      # console.log @model.get('dealerHand').scores()[0]
+      # @model.get('dealerHand').hit()
 
       while @model.get('dealerHand').scores()[0] < 17
         @model.get('dealerHand').hit()
@@ -41,6 +41,8 @@ class window.AppView extends Backbone.View
 
   initialize: ->
     @render()
+
+
 
   render: ->
     @$el.children().detach()
